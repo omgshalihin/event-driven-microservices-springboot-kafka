@@ -19,3 +19,18 @@ $ bin/zookeeper-server-start.sh config/zookeeper.properties
 ```
 $ bin/kafka-server-start.sh config/server.properties
 ```
+
+## How app works?
+- clone project into local directory
+    ```
+    git clone git@github.com:omgshalihin/event-driven-microservices-springboot-kafka.git
+    ```
+- within emailService > kafka > OrderConsumer.java class, replace `fromEmail` & `toEmail`
+- then run all 3 microservices (order, stock, email)
+- make a POST request to http://localhost:8081/api/orders
+- with body e.g.
+  {
+  "name": "test name",
+  "qty": 1,
+  "price": 5500
+  }
